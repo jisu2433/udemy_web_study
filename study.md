@@ -165,3 +165,30 @@ function getColor(phrase) {
   }
 }
 ```
+
+**Truthy and Falsy Values**
+
+- Falsy values
+  - false
+  - 0
+  - ""
+  - null
+  - undefined
+  - NaN
+- Everything else is truthy!
+
+**Logical Operators**
+
+- && (and)
+  - true && true 만 true!
+- || (or)
+  - 하나만 true 여도 true!
+- ! (not)
+
+**switch**
+
+- case가 if, else if 역할
+- but, 일치하는 항목 찾은 후 마지막까지 계속 실행
+- break 넣어주면 해결
+- default가 else 역할
+- 그냥 if를 쓰자.
