@@ -2,7 +2,7 @@
 
 ## For
 
-기본 구조
+**기본 구조**
 
 ```jsx
 for(let num 1; num <= 10; num++){
@@ -66,7 +66,7 @@ for (let i = 0; i < seatingChart.lenght; i++) {
 
 ## While
 
-기본 구조
+**기본 구조**
 
 ```jsx
 let num = 0;
