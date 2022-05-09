@@ -1,0 +1,25 @@
+{
+  "name": "udemy_web_study",
+  "version": "1.0.0",
+  "description": "웹 개발 실전 프로젝트 스터디",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jisu2433/udemy_web_study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jisu2433/udemy_web_study/issues"
+  },
+  "homepage": "https://github.com/jisu2433/udemy_web_study#readme",
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "method-override": "^3.0.0",
+    "uuid": "^8.3.2"
+  }
+}
