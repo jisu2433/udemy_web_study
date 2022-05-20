@@ -20,28 +20,18 @@ const verifyPassword = (req, res, next) => {
   if (password === 'chickennugget') {
     next();
   }
-  res.send('SORRY YOU NEED A PASSWORD!!!')
+  res.status(401)
+  throw new AppError(401, 'Password required!')
 }
-
-// app.use((req, res, next) => {
-//   console.log("THIS IS MY FIRST MIDDLEWARE!")
-//   return next();
-//   console.log("THIS IS MY FIRST MIDDLEWARE - AFTER CALLING NEXT()")
-// })
-// app.use((req, res, next) => {
-//   console.log("THIS IS MY FIRST MIDDLEWARE!")
-//   return next();
-// })
-// app.use((req, res, next) => {
-//   console.log("THIS IS MY FIRST MIDDLEWARE!")
-//   return next();
-// })
 
 app.get('/', (req, res) => {
   console.log(`REQUEST DATE: ${req.requestTime}`)
   res.send('HOME PAGE!')
 })
 
+app.get('/error', (req, res) => {
+
+})
 app.get('/dogs', verifyPassword, (req, res) => {
   console.log(`REQUEST DATE: ${req.requestTime}`)
   res.send('WOOF WOOF!')
@@ -55,6 +45,13 @@ app.use((req, res) => {
   res.status(404).send('NOT FOUND!')
 })
 
+app.use((err, req, res, next) => {
+  console.log("****************");
+  console.log(err)
+  next(err)
+})
+
+err 없이 next를 치면 내장 오류 핸들러가 작동하지 않음
 app.listen(3000, () => {
   console.log('App is running on localhost:3000')
 })
