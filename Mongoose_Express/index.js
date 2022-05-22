@@ -6,11 +6,11 @@ const methodOverride = require('method-override');
 const { stringify } = require('uuid');
 
 const Product = require('./models/product');
-
+const Farm = require('./models/farm')
 main().catch(err => { console.log(err); console.log("OH NO MONGO CONNECTION ERROR!!")});
 
 async function main() {
-  await mongoose.connect('mongodb://localhost:27017/farmStand');
+  await mongoose.connect('mongodb://localhost:27017/farmStandTake2');
 }
 
 app.set('views', path.join(__dirname, 'views'));
@@ -18,6 +18,16 @@ app.set('view engine', 'ejs');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+
+// Farm Routes
+app.get('/farms/new', (req, res) => {
+  res.render('farms/new')
+})
+
+app.post('/farms', async (req, res) => {
+  const farm = new Farm(req.body);
+  await farm.save();
+})
 
 const categories = ['fruit', 'vegetable', 'dairy'];
 
